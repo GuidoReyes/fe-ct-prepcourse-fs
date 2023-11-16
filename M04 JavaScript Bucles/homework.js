@@ -157,14 +157,19 @@ function fizzBuzz(num) {
    // Si "num" es divisible entre 3 y 5 (ambos), retorna "fizzbuzz".
    // De lo contrario, retorna false.
    // Tu código:
-  if (num % 3 == 0) {
-    return "fizz";
-  } else if (num % 5 == 0) {
-    return "buzz";
-  } else if (num % 3 == 0 && num % 5 == 0) {
+  if (num % 3 === 0 && num % 5 === 0) {
     return "fizzbuzz";
+  } else if (num % 3 !== 0 && num % 5 === 0) {
+    return "buzz";
+  } else if (num % 3 === 0 && num % 5 !== 0) {
+    return "fizz";
+  } else {
+    return false;
   }
   }
+
+  
+console.log(fizzBuzz(5));
   
   
 
@@ -184,9 +189,11 @@ function operadoresLogicos(num1, num2, num3) {
 
     return "Hay negativos";
   } else if (num3 > num1 && num3 > num2) {
-    return num3++;
+    return num3 = num3 + 1;
   } else if (num1 === 0 && num2 === 0 && num3 === 0) {
     return "Error";
+  } else {
+    return false;
   }
   }
   
@@ -207,14 +214,19 @@ function esPrimo(num) {
   }
   
   for (let i = 2; i <= num; i++) {
-    if (num % i == 0) {
+    resultado = num % i 
+    console.log(resultado);
+    if (resultado == 0) {
       return false;
-    
+    } else {
+      return true;
+
     }
   }
-  return true;
+
 }
 
+console.log(esPrimo(13));
 
 
 function esVerdadero(valor) {
@@ -233,10 +245,10 @@ function tieneTresDigitos(num) {
    // Caso contrario, retornar false.
    // Tu código:
   let strNum = String(num);
-  if (strNum.length >= 3) {
-    return true;
-  } else {
+  if (strNum.length !== 3) {
     return false;
+  } else {
+    return true;
   }
 }
 
